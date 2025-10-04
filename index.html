@@ -13,9 +13,10 @@
       color: #1a1a1a;
       background-color: #ffffff;
       margin:0;
+      padding-top: 95px; /* espacio para topbar + navbar */
     }
     a { text-decoration: none; }
-    .navbar { background-color: #040404; }
+    .navbar { background-color: #040404; margin-bottom: 0 !important; border: none !important; box-shadow: none !important; }
     .navbar-brand, .navbar-nav .nav-link { color: white; font-weight: 500; transition: color 0.3s; }
     .navbar-nav .nav-link:hover { color: #ffffff; }
 
@@ -25,6 +26,24 @@
     }
 
     .amarillo:hover { color: #F7EC00; }
+
+    /* ✅ Topbar fijo */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1049;
+      font-size: 0.9rem;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 35px; /* altura de la franja */
+      left: 0;
+      width: 100%;
+      z-index: 1050;
+    }
 
     /* Hero con slider de fondos */
     .hero {
@@ -111,9 +130,9 @@
 
     /* ✅ Ajuste del carrusel */
     #carouselProyectos {
-      max-width: 700px;   /* ancho máximo en PC */
-      margin: 0 auto;     /* centra el carrusel */
-      border-radius: 12px; /* opcional */
+      max-width: 700px;
+      margin: 0 auto;
+      border-radius: 12px;
       overflow: hidden;
     }
 
@@ -149,9 +168,13 @@
   </style>
 </head>
 <body>
+  <!-- ✅ Topbar -->
+  <div class="topbar bg-light text-dark py-2 px-3 d-flex justify-content-between align-items-center small">
+    <span>+54 9 362 426-3375 | Resistencia, Chaco (Trabajamos en todo el Nordeste Argentino) | Heirfeld Lucas Hernan | heirfeldconstrucciones@gmail.com</span>
+  </div>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <!-- ✅ Navbar debajo del topbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="#"><img src="img/logo.png" width="60px" height="35px">Heirfeld Construcciones</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
@@ -175,7 +198,7 @@
     <div class="hero-bg img3"></div>
     
     <div class="hero-content mt-5">
-      <br><br><br>
+      <br>
       <h1 class="typewriter">Construimos tu futuro</h1><br>
       <p><span class="textoAmarillo"><u>15 años en el rubro.</u></span></p>
       <p class="gris">Soluciones integrales <br>en construcción y arquitectura</p>
@@ -192,7 +215,8 @@
         <div class="col-md-4"><div class="card h-100 shadow"><div class="card-body"><h5>Obra Civil</h5><p>Construcción de viviendas, proyectos industriales y quinchos.</p></div></div></div>
         <div class="col-md-4"><div class="card h-100 shadow"><div class="card-body"><h5>Remodelaciones</h5><p>Renovación de espacios con diseños modernos y funcionales.</p></div></div></div>
         <div class="col-md-4"><div class="card h-100 shadow"><div class="card-body"><h5>Habilitaciones Comerciales</h5><p>Permite que un negocio funcione legalmente cumpliendo normas básicas.</p></div></div></div>
-        <div class="col-md-4"><div class="card h-100 shadow"><div class="card-body"><h5>Desarrollos Inmobiliarios</h5><p>Transformar terrenos en proyectos con valor.</p></div></div></div>
+        <div class="col-md-4"><div class="card h-100 shadow"><div class="card-body"><h5>Manejo y Venta de materiales</h5><p>Nos encargamos del suministro y gestión de materiales de construcción, garantizando calidad y optimización de costos en cada proyecto.</p></div></div></div>
+        <div class="col-md-4"><div class="card h-100 shadow"><div class="card-body"><h5>Desarrollos Inmobiliarios</h5><p>Transformamos terrenos en proyectos funcionales y atractivos, combinando diseño, planificación y ejecución de calidad.</p></div></div></div>
         <div class="col-md-4"><div class="card h-100 shadow"><div class="card-body"><h5>Arquitectura</h5><p>Diseño arquitectónico personalizado y adaptado a cada necesidad.</p></div></div></div>
       </div>
     </div>
@@ -204,27 +228,13 @@
       <h2 class="text-center mb-5">Galería</h2>
       <div id="carouselProyectos" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="img/proyecto1.png" class="d-block w-100" alt="Foto 1">
-          </div>
-          <div class="carousel-item">
-            <img src="img/8.jpg" class="d-block w-100" alt="Foto 2">
-          </div>
-          <div class="carousel-item">
-            <img src="img/parrilla.png" class="d-block w-100" alt="Foto 3">
-          </div>
-          <div class="carousel-item">
-            <img src="img/pileta2.png" class="d-block w-100" alt="Foto 4">
-          </div>
-          <div class="carousel-item">
-            <img src="img/techo.png" class="d-block w-100" alt="Foto 5">
-          </div>
-          <div class="carousel-item">
-            <img src="img/6.jpeg" class="d-block w-100" alt="Foto 6">
-          </div>
-          <div class="carousel-item">
-            <img src="img/9.jpeg" class="d-block w-100" alt="Foto 7">
-          </div>
+          <div class="carousel-item active"><img src="img/proyecto1.png" class="d-block w-100" alt="Foto 1"></div>
+          <div class="carousel-item"><img src="img/8.jpg" class="d-block w-100" alt="Foto 2"></div>
+          <div class="carousel-item"><img src="img/parrilla.png" class="d-block w-100" alt="Foto 3"></div>
+          <div class="carousel-item"><img src="img/pileta2.png" class="d-block w-100" alt="Foto 4"></div>
+          <div class="carousel-item"><img src="img/techo.png" class="d-block w-100" alt="Foto 5"></div>
+          <div class="carousel-item"><img src="img/6.jpeg" class="d-block w-100" alt="Foto 6"></div>
+          <div class="carousel-item"><img src="img/9.jpeg" class="d-block w-100" alt="Foto 7"></div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselProyectos" data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
