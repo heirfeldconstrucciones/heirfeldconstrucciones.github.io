@@ -165,6 +165,28 @@
       text-decoration: none;
       animation: bounce 2s infinite;
     }
+    /* ✅ Ajuste para topbar en móviles */
+    @media (max-width: 768px) {
+      .topbar {
+        font-size: 0.7rem; /* Tamaño de fuente reducido pero legible */
+        padding: 0.5rem 1rem; /* Padding ajustado para más espacio */
+        flex-wrap: wrap; /* Permite que el contenido se envuelva en líneas */
+        justify-content: center; /* Centra el contenido en móviles */
+        text-align: center; /* Alinea el texto al centro */
+      }
+      .topbar span {
+        display: block; /* Hace que el span ocupe toda la línea si es necesario */
+        margin-bottom: 0.2rem; /* Espacio entre líneas si se envuelve */
+      }
+
+      /* Ajustes para navbar y body en móviles */
+      .navbar {
+        top: 60px; /* Baja el navbar para dar espacio al topbar expandido */
+      }
+      body {
+        padding-top: 120px; /* Aumenta el espacio superior para evitar superposiciones */
+      }
+    }
   </style>
 </head>
 <body>
